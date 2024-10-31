@@ -2,6 +2,7 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QLabel, QPushButton
 from GUI.Style.style import CONST_MAIN_WINDOW
 from GUI.SupportWindow.add_window import AddWindowTask
+from GUI.SupportWindow.delete_window import DeleteWindowTask
 
 class MainWindow(QMainWindow):
     def __init__(self) -> None:
@@ -22,6 +23,8 @@ class MainWindow(QMainWindow):
         add_to_db.clicked.connect(self.add_task)
         
         delete_to_db = QPushButton(text="delete record")
+        delete_to_db.clicked.connect(self.del_task)
+        
         look_db = QPushButton(text="view entries")
         
         control_UI.addWidget(greet, alignment=Qt.AlignmentFlag.AlignCenter)
@@ -37,4 +40,7 @@ class MainWindow(QMainWindow):
         
     def add_task(self):
         self.add = AddWindowTask()
+        
+    def del_task(self):
+        self.delete = DeleteWindowTask()
         

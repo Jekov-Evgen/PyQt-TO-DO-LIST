@@ -19,7 +19,7 @@ class AddWindowTask(QMainWindow):
         enter_text = QLineEdit()
         id_ = QLabel(text="id for search")
         enter_id = QLineEdit()
-        add_task = QPushButton(text="add task to list")
+        add_task = QPushButton(text="Add")
         
         control_UI.addWidget(l_add_task, alignment=Qt.AlignmentFlag.AlignCenter)
         control_UI.addWidget(priority, alignment=Qt.AlignmentFlag.AlignCenter)
@@ -28,9 +28,9 @@ class AddWindowTask(QMainWindow):
         control_UI.addWidget(enter_text)
         control_UI.addWidget(id_, alignment=Qt.AlignmentFlag.AlignCenter)
         control_UI.addWidget(enter_id)
+        control_UI.addWidget(add_task)
         
         central_widget.setLayout(control_UI)
         
         self.setCentralWidget(central_widget)
-        
         self.show()
