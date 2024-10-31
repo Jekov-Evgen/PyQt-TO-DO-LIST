@@ -1,6 +1,6 @@
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QLabel, QPushButton
-from GUI.Style.style import CONST_MAIN_WINDOW, CONST_ADD_WINDOW
+from GUI.Style.style import CONST_MAIN_WINDOW
 from GUI.AddWindow.add_window import AddWindowTask
 
 class MainWindow(QMainWindow):
@@ -11,6 +11,7 @@ class MainWindow(QMainWindow):
         self.setStyleSheet(CONST_MAIN_WINDOW)
         
         self.add = None
+        self.delete = None
         
         control_UI = QVBoxLayout()
         central_widget = QWidget()
