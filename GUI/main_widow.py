@@ -1,7 +1,7 @@
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QLabel, QPushButton
 from GUI.Style.style import CONST_MAIN_WINDOW
-from GUI.AddWindow.add_window import AddWindowTask
+from GUI.SupportWindow.add_window import AddWindowTask
 
 class MainWindow(QMainWindow):
     def __init__(self) -> None:
