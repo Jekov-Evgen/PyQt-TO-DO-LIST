@@ -6,7 +6,8 @@ def connect():
     
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS to_do_list (
-    priority INTEGER
+    id INTEGER PRIMARY KEY,
+    priority INTEGER,
     name TEXT NOT NULL
     )
     """)
