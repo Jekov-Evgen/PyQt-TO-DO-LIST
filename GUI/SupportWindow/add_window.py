@@ -1,8 +1,8 @@
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QLabel, QPushButton, QLineEdit
 from GUI.Style.style import CONST_ADD_WINDOW
-from GUI.SupportWindow.pop_ups import err, Result
-from DB.working_with_database import add_db, all_task_db
+from GUI.SupportWindow.pop_ups import Error, Result
+from DB.working_with_database import add_db
 
 class AddWindowTask(QMainWindow):
     def __init__(self) -> None:
@@ -41,7 +41,7 @@ class AddWindowTask(QMainWindow):
             pr = int(self.enter_priority.text())
             tx = str(self.enter_text.text())
         except:
-            self.call_err = err()
+            self.call_err = Error()
         
         add_db(pr, tx)
         

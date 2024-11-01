@@ -14,7 +14,7 @@ def connect():
     
     connect.close()
     
-def all_task_db():
+def all_db():
     connect = sqlite3.connect('affairs.db')
     cursor = connect.cursor()
     
