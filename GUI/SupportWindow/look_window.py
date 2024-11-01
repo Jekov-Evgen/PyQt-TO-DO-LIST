@@ -7,13 +7,4 @@ class LookWindow(QMainWindow):
         super().__init__()
         self.setFixedSize(500, 500)
         self.setWindowTitle('Look Window')
-        
-        result = all_task()
-        list_Ql = []
-        
-        for i in range(len(result)):
-            list_Ql.append(QLabel())
-
-        for i in range(len(result)):
-            list_Ql[i].setText(result[i])
             
