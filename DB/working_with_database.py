@@ -14,7 +14,7 @@ def connect():
     
     connect.close()
     
-def all_task():
+def all_task_db():
     connect = sqlite3.connect('affairs.db')
     cursor = connect.cursor()
     
@@ -24,3 +24,12 @@ def all_task():
     connect.close()
     
     return result
+
+def add_db(pr : int, tx : str):
+    connect = sqlite3.connect('affairs.db')
+    cursor = connect.cursor()
+    
+    cursor.execute("INSERT INTO to_do_list (priority, name) VALUES (?, ?)", (pr, tx))
+    
+    connect.commit()
+    connect.close()
