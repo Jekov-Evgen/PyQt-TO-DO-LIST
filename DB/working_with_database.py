@@ -33,3 +33,12 @@ def add_db(pr : int, tx : str):
     
     connect.commit()
     connect.close()
+    
+def del_db(id_):
+    connect = sqlite3.connect('affairs.db')
+    cursor = connect.cursor()
+    
+    cursor.execute("DELETE FROM to_do_list WHERE id = ?", (id_,))
+    
+    connect.commit()
+    connect.close()
