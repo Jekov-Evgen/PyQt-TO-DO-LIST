@@ -46,6 +46,3 @@ class AddWindowTask(QMainWindow):
         add_db(pr, tx)
         
         self.res = Result("Successful addition!", "Your task has been added!")
-        
-        tt = all_task_db()
-        print(all_task_db())
