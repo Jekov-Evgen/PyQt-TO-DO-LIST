@@ -181,3 +181,46 @@ CONST_DELETE_WINDOW = """
         padding: 15px;
     }
 """
+
+CONST_MESSAGE_BOX = """
+    QMessageBox {
+        background-color: #1e1e1e;
+        color: #d4d4d4;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    QMessageBox QLabel {
+        color: #d4d4d4;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    QMessageBox QPushButton {
+        background-color: #3a3d41;
+        color: #d4d4d4;
+        font-size: 14px;
+        border-radius: 6px;
+        padding: 8px;
+        border: 1px solid #555555;
+    }
+
+    QMessageBox QPushButton:hover {
+        background-color: #505357; 
+    }
+
+    QMessageBox QPushButton:pressed {
+        background-color: #3a3d41;
+        border: 1px solid #6a6a6a;
+    }
+    
+    QMessageBox QPushButton#okButton {
+        background-color: #007acc;
+        color: white;
+    }
+
+    QMessageBox QPushButton#cancelButton {
+        background-color: #d9534f;
+        color: white;
+    }
+"""

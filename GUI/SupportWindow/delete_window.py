@@ -2,7 +2,7 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QLabel, QPushButton, QLineEdit
 from GUI.Style.style import CONST_DELETE_WINDOW
 from GUI.SupportWindow.pop_ups import Error, Result
-from DB.working_with_database import del_db, add_db, all_db
+from DB.working_with_database import del_db
 
 class DeleteWindowTask(QMainWindow):
     def __init__(self) -> None:
