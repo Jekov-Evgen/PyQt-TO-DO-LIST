@@ -1,7 +1,11 @@
 from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QLabel
+from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QLabel, QScrollArea
 from DB.working_with_database import all_db
 from GUI.Style.style import CONST_LOOK_WINDOW
+
+def sort(arr_task_bd):
+    result = sorted(arr_task_bd, key=lambda x: x[1])
+    return result
 
 class LookWindowTask(QMainWindow):
     def __init__(self) -> None:
@@ -9,9 +13,11 @@ class LookWindowTask(QMainWindow):
         self.setFixedSize(1024, 768)
         self.setWindowTitle('Look Window')
         self.setStyleSheet(CONST_LOOK_WINDOW)
+        self.sc = QScrollArea()
         
         
         get_bd = all_db()
+        sort_data = sort(get_bd)
         control_UI = QVBoxLayout()
         central_widget = QWidget()
         
@@ -28,12 +34,12 @@ class LookWindowTask(QMainWindow):
         
         control_UI.addLayout(title)
         
-        for i in range(len(get_bd)):
+        for i in range(len(sort_data)):
             control_task = QHBoxLayout()
             
-            l_id = QLabel(text=str(get_bd[i][0]))
-            l_pr = QLabel(text=str(get_bd[i][1]))
-            l_text = QLabel(text=str(get_bd[i][2]))
+            l_id = QLabel(text=str(sort_data[i][0]))
+            l_pr = QLabel(text=str(sort_data[i][1]))
+            l_text = QLabel(text=str(sort_data[i][2]))
             
             l_id.setObjectName("taskLabel")
             l_pr.setObjectName("taskLabel")
@@ -50,6 +56,8 @@ class LookWindowTask(QMainWindow):
         title_id.setObjectName("taskLabel")
         title_pr.setObjectName("taskLabel")
         title_text.setObjectName("taskLabel")
+        
+        self.sc.setWidgetResizable(True)
         
         self.show()
                 
